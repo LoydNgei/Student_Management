@@ -7,10 +7,11 @@
         <title>My Website</title>
         <link rel="stylesheet" href="./style.css">
         <link rel="icon" href="./favicon.ico" type="image/x-icon">
+        @vite('resources/css/app.css')
     </head>
     <body>
-        <nav>
-            <ul>
+        <nav class="">
+            <ul class="">
                 <li>Home</li>
                 <li>About</li>
                 <li>Search</li>

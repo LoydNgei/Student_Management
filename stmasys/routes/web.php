@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+// COMMON RESOURCE ROUTES
+
+// index - show all listings
+// show - show single listings
+// create - show form to create new listing
+// store - Store new listing
+// edit - show form to edit listing
+// update - update listing
+// destroy - Delete listing
+
+
+
+// Layout
+
 Route::get('/', function () {
-    return view('layout');
+    return view('components.layout');
 });
+
+
+// Register Form
+
+Route::get('/register', [UserController::class, 'create']);
+
+

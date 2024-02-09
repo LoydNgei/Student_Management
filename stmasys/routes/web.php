@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LecturerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,13 +31,16 @@ use App\Http\Controllers\UserController;
 
 // Layout
 
-Route::get('/', function () {
-    return view('components.layout');
-});
+Route::get('/', [LecturerController::class, 'index']);
+
 
 
 // Register Form
 
 Route::get('/register', [UserController::class, 'create']);
+
+// Missing Mark Form
+
+Route::get('/enquiry', [MarkContoller::class, 'create']);
 
 

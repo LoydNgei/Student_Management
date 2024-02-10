@@ -6,7 +6,6 @@
                 <p><strong>Lecturer Name: </strong>Dr Martin Oleche</p>
                 <p></p>
             </div>  
-            
         @endforeach       
     </div>
 </x-layout>

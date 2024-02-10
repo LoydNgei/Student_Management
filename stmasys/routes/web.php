@@ -44,3 +44,5 @@ Route::get('/register', [UserController::class, 'create']);
 Route::get('/enquiry', [MarkContoller::class, 'create']);
 
 
+// Lecturer 
+Route::post('/', [LecturerController::class, 'show']);

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MarksController;
 use App\Http\Controllers\LecturerController;
 
 /*
@@ -29,18 +30,21 @@ use App\Http\Controllers\LecturerController;
 
 
 
+// Login Form
+Route::get('/', [UserController::class, 'showform']);
+
+
+// The Login process
+
+Route::post('/', [UserController::class, 'login']);
+
 // Layout
 
-Route::get('/', [LecturerController::class, 'index']);
+Route::get('/home', [LecturerController::class, 'index'])->name('home');
 
-
-
-// Register Form
-
-Route::get('/register', [UserController::class, 'create']);
 
 // Missing Mark Form
 
-Route::get('/enquiry', [MarkContoller::class, 'create']);
+Route::get('/inquiry', [MarksController::class, 'create']);
 
 

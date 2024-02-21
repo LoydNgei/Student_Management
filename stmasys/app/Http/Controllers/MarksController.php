@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 class MarksController extends Controller
 {
+    // The query form to be filled
+
     public function create() {
-        return view('components.enquiryform');
+        return view('lecturers.queries');
     }
 }

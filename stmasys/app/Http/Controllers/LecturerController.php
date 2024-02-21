@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Lecturers;
 
 class LecturerController extends Controller
 {
-    public function index() {
-        return view('components.home');
+    public function index($lecturer) {
+        return view('lecturers.home');
     }
 }

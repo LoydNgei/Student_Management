@@ -13,13 +13,4 @@ class Lecturer extends Model
         'lecturer_name',
         'course_taught'
     ];
-
-    public static function createDummyData()
-    {
-        // Dummy data for 9 lecturers
-        $dummyData = [
-            ['lecturer_name' => 'John Doe', 'course_taught' => 'Computer Science'],
-            ['lecturer_name' => 'Jane Smith', 'course_taught' => 'Mathematics'],
-        ];
-    }
 }

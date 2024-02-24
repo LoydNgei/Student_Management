@@ -14,8 +14,8 @@ return new class extends Migration
         if (!Schema::hasTable('lecturers')) {
             Schema::create('lecturers', function (Blueprint $table) {
                 $table->id();
-                $table->string('Lecturer Name');
-                $table->string('Course taught');
+                $table->string('lecturer_name');
+                $table->string('course_taught');
                 $table->timestamps();
             });
         }
@@ -27,7 +27,7 @@ return new class extends Migration
     public function down(): void
     {
         if (Schema::hasTable('lecturers')) {
-            Schema::dropIfExists('lecturer');
+            Schema::dropIfExists('lecturers');
     }
 }
 };

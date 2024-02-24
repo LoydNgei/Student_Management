@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Lecturers;
+use App\Models\Lecturer;
 
 class LecturerController extends Controller
 {
-    public function index($lecturer) {
-        return view('lecturers.home');
+    public function index() {
+        $lecturers = Lecturer::all();
+
+        return view('lecturers.home', ['lecturers' => $lecturers]);
     }
 }

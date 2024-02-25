@@ -1,7 +1,7 @@
 {{-- {{ dd($lecturers) }} --}}
 
 <x-layout>
-    <x-navbar>
+    <x-navbar></x-navbar>
         <div class="grid grid-cols-3 gap-4">
             @foreach ($lecturers as $lecturer)
                 <div class="border p-4">
@@ -10,5 +10,4 @@
                 </div>
             @endforeach
         </div>
-    </x-navbar>
 </x-layout>

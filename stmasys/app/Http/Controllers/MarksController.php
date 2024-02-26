@@ -11,4 +11,14 @@ class MarksController extends Controller
     public function create() {
         return view('lecturers.queries');
     }
+
+    public function send(Request $request) {
+        $formFields = $request->validate([
+            'name'=>'required',
+            'Email'=> 'required',
+            'Regitration number' => 'required',
+            'message'=> 'required'
+        ]);
+        
+    }
 }

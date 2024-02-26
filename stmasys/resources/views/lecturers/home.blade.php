@@ -7,6 +7,7 @@
                 <div class="border p-4">
                     <p><strong>Lecturer Name:</strong> {{ $lecturer->lecturer_name }}</p>
                     <p><strong>Course Taught:</strong> {{ $lecturer->course_taught }}</p>
+                    <a href="{{ route('inquiry') }}">Submit Query</a>
                 </div>
             @endforeach
         </div>

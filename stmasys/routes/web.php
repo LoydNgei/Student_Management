@@ -47,4 +47,6 @@ Route::get('/home', [LecturerController::class, 'index'])->name('home');
 
 Route::get('/inquiry', [MarksController::class, 'create'])->name('inquiry');
 
+// Submit the Marks Form
 
+Route::post('/sendquery', [MarksController::class, 'send']);

@@ -1,7 +1,7 @@
 <x-layout>
     <x-navbar></x-navbar>
     <div class="flex items-center justify-center">
-        <form method="POST" action="/inquiry" class="rounded px-8 pt-6 pb-8 mb-4">
+        <form method="POST" action="/sendquery" class="rounded px-8 pt-6 pb-8 mb-4">
             @csrf
             <div class="mb-4">
                 <label class="block text-lg font-bold mb-2" for="name">

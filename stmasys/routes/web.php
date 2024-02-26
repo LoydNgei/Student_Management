@@ -45,6 +45,6 @@ Route::get('/home', [LecturerController::class, 'index'])->name('home');
 
 // Missing Mark Form
 
-Route::get('/inquiry', [MarksController::class, 'create']);
+Route::get('/inquiry', [MarksController::class, 'create'])->name('inquiry');
 
 

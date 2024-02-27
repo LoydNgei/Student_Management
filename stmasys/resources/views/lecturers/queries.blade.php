@@ -1,6 +1,6 @@
 <x-layout>
     <x-navbar></x-navbar>
-    <div class="flex items-center justify-center">
+    <div class="flex items-center justify-center pt-32">
         <form method="POST" action="/sendquery" class="rounded px-8 pt-6 pb-8 mb-4">
             @csrf
             <div class="mb-4">
@@ -29,3 +29,4 @@
         </form>
     </div>
 </x-layout>
+<x-footer></x-footer>

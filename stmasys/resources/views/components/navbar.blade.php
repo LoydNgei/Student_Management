@@ -1,14 +1,15 @@
-{{-- The Navigation Bar --}}
-<nav class="flex h-50">
+<nav class="flex h-50 bg-blue-950 fixed w-full top-0 z-10">
     <div>
         <a href="/">
             <img src="{{asset('images/Ecosa.jpg')}}" class="h-24 w-30 object-contain p-2" alt="Logo"/>
         </a>
     </div>
-    <ul class="flex space-x-10 p-4 ml-auto">
-        <li><a href="/" class="hover:bg-yellow-600 px-2 py-1 rounded">Home</a></li>
-        <li><a href="/about" class="hover:bg-yellow-600 px-2 py-1 rounded">About</a></li>
-        <li><a href="/search" class="hover:bg-yellow-600 px-2 py-1 rounded">Search</a></li>
-        <li><a href="/register" class="hover:bg-yellow-600 px-2 py-1 rounded">Register</a></li>
-    </ul>
+
+    <div class="flex items-center ml-auto px-16 space-x-20">
+        <input placeholder="Search" class="rounded p-2">
+        <a href="/" class="text-white">
+            <span>Logout</span>
+        </a>
+    </div>
 </nav>
+

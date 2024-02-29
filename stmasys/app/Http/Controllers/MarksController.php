@@ -16,9 +16,8 @@ class MarksController extends Controller
         $formFields = $request->validate([
             'name'=>'required',
             'Email'=> 'required',
-            'Regitration number' => 'required',
+            'Registration number' => 'required',
             'message'=> 'required'
         ]);
-        
     }
 }

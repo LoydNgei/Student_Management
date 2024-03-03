@@ -12,6 +12,26 @@ class UserController extends Controller
         return view('users.register');
     }
 
+
+    // Register User
+    public function register(Request $request) {
+        $formFields = $request->validate([
+            'registration_number' => 'required',
+            'password' => 'required'
+        ]);
+
+        // Create a new User instance
+
+        $user = new User();
+        $user->registration_number = $formFields['registration_number'];
+        $user->password = bycrpt($formFields['password']);
+        $user->save();
+
+        // Redirect the user after registration
+        return redirect('/')->with('message', 'User Registered successfully');
+    }
+
+
     public function login(Request $request) {
         $formFields = $request->validate([
             'Registration Number' => 'required',

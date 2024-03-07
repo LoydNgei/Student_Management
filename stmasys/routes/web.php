@@ -34,9 +34,14 @@ use App\Http\Controllers\LecturerController;
 Route::get('/', [UserController::class, 'showform']);
 
 
+// Register process
+Route::post('/users', [UserController::class, 'register']);
+
+
+
 // The Login process
 
-Route::post('/users', [UserController::class, 'register']);
+Route::post('/login', [UserController::class, 'login']);
 
 // Layout
 

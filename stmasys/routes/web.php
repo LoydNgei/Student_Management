@@ -36,7 +36,7 @@ Route::get('/', [UserController::class, 'showform']);
 
 // The Login process
 
-Route::post('/users', [UserController::class, 'login']);
+Route::post('/users', [UserController::class, 'register']);
 
 // Layout
 

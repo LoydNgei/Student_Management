@@ -19,6 +19,9 @@
                     Log in
                 </a>
             </div>
+            <div class="mt-4">
+                <p>Don't have an account<a href="/login"> Create one</a></p>
+            </div>
         </form>
     </div>
 </x-layout>

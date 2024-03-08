@@ -24,17 +24,17 @@ class UserController extends Controller
 
         $user = new User();
         $user->registration_number = $formFields['registration_number'];
-        $user->password = bycrpt($formFields['password']);
+        $user->password = bcrypt($formFields['password']);
         $user->save();
 
         // Redirect the user after registration
-        return redirect('/')->with('message', 'User Registered successfully');
+        return redirect('/login')->with('message', 'User Registered successfully');
     }
 
 
     public function login(Request $request) {
         $formFields = $request->validate([
-            'Registration Number' => 'required',
+            'registration_number' => 'required',
             'password' => 'required' 
         ]);
 

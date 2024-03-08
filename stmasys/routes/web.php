@@ -38,7 +38,6 @@ Route::get('/', [UserController::class, 'showform']);
 Route::post('/users', [UserController::class, 'register']);
 
 
-
 // The Login process
 
 Route::post('/login', [UserController::class, 'login']);

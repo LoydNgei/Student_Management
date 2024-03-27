@@ -8,34 +8,38 @@ class UserController extends Controller
 {
     // Create Form
 
-    public function showform() {
-        return view('users.register');
+    public function showForm() {
+        return view('users.login');
     }
 
 
     // Register User
-    public function register(Request $request) {
+
+    public function registerForm(Request $request) {
         $formFields = $request->validate([
             'registration_number' => 'required',
-            'password' => 'required'
+            'password' => 'required',
+            'confirm_password' => 'required'
         ]);
+
 
         // Create a new User instance
 
         $user = new User();
         $user->registration_number = $formFields['registration_number'];
         $user->password = bcrypt($formFields['password']);
+        $user->confirm_password = $formFields['confirm_password'];
         $user->save();
 
         // Redirect the user after registration
-        return redirect('/login')->with('message', 'User Registered successfully');
+        return redirect->route('/login')->with('message', 'User Registered successfully');
     }
 
 
-    public function login(Request $request) {
+    public function loginForm(Request $request) {
         $formFields = $request->validate([
             'registration_number' => 'required',
-            'password' => 'required' 
+            'password' => 'required'
         ]);
 
         if(auth()->attempt($formFields)) {
@@ -44,6 +48,4 @@ class UserController extends Controller
         return back()->withErrors('Invalid credentials');
 
     }
-
-
 }

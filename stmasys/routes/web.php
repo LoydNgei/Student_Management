@@ -34,13 +34,15 @@ use App\Http\Controllers\LecturerController;
 Route::get('/', [UserController::class, 'showform']);
 
 
+
+// The Login submission
+
+Route::post('/login', [UserController::class, 'loginForm'])->name('login');
+
 // Register process
-Route::post('/users', [UserController::class, 'register']);
+Route::post('/register', [UserController::class, 'registerForm']);
 
 
-// The Login process
-
-Route::post('/login', [UserController::class, 'login']);
 
 // Layout
 

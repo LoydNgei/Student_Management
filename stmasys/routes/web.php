@@ -31,22 +31,26 @@ use App\Http\Controllers\LecturerController;
 
 
 // Login Form
-Route::get('/', [UserController::class, 'showform']);
-
+Route::get('/home', [UserController::class, 'showLoginForm']);
 
 
 // The Login submission
 
 Route::post('/login', [UserController::class, 'loginForm'])->name('login');
 
+// Show Register form
+
+Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('register');
+
+
 // Register process
-Route::post('/register', [UserController::class, 'registerForm']);
+Route::post('/register', [UserController::class, 'registerForm'])->name('register');
 
 
 
 // Layout
 
-Route::get('/home', [LecturerController::class, 'index'])->name('home');
+Route::get('/', [LecturerController::class, 'index'])->name('home');
 
 
 // Missing Mark Form

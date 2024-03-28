@@ -1,6 +1,6 @@
 <x-layout>
     <div class="min-h-screen flex items-center justify-center">
-        <form method="POST" action="/users" class="bg-blue-300 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <form method="POST" action="{{ route('login') }}" class="bg-blue-300 shadow-md rounded px-8 pt-6 pb-8 mb-4">
 
             @csrf
             <div class="mb-4">

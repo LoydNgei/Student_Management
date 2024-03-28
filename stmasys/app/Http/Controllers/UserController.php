@@ -6,10 +6,17 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    // Create Form
+    // Show Login Form
 
-    public function showForm() {
+    public function showLoginForm() {
         return view('users.login');
+    }
+
+
+    // Show Register Form
+
+    public function showRegistrationForm() {
+        return view('users.register');
     }
 
 
@@ -32,9 +39,11 @@ class UserController extends Controller
         $user->save();
 
         // Redirect the user after registration
-        return redirect->route('/login')->with('message', 'User Registered successfully');
+        return redirect->route('login')->with('message', 'User Registered successfully');
     }
 
+
+    // Log in process
 
     public function loginForm(Request $request) {
         $formFields = $request->validate([

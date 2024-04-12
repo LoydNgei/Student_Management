@@ -47,6 +47,11 @@ Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('
 Route::post('/register', [UserController::class, 'registerForm'])->name('register');
 
 
+// Admin authentication routes
+
+Route::post('/adminLogin', [UserController::class, 'adminForm'])->name('admin login');
+
+
 
 // Layout
 

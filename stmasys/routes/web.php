@@ -31,8 +31,7 @@ use App\Http\Controllers\LecturerController;
 
 
 // Login Form
-Route::get('/home', [UserController::class, 'showLoginForm']);
-
+Route::get('/', [UserController::class, 'showLoginForm']);
 
 // The Login submission
 
@@ -55,7 +54,7 @@ Route::post('/adminLogin', [UserController::class, 'adminForm'])->name('admin lo
 
 // Layout
 
-Route::get('/', [LecturerController::class, 'index'])->name('home');
+Route::get('/home', [LecturerController::class, 'index'])->name('home');
 
 
 // Missing Mark Form

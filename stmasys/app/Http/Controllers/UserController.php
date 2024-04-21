@@ -39,7 +39,7 @@ class UserController extends Controller
         $user->save();
 
         // Redirect the user after registration
-        return redirect->route('login')->with('message', 'User Registered successfully');
+        return redirect()->route('login')->with('message', 'User Registered successfully');
     }
 
 

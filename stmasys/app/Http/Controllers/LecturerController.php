@@ -4,12 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Lecturer;
+use App\Models\Course;
 
 class LecturerController extends Controller
 {
     public function index() {
-        $lecturers = Lecturer::all();
+        // Fetch lecturers
+        $lecturers = Lecturer::paginate(6);
 
-        return view('lecturers.home', ['lecturers' => $lecturers]);
+        // Fetch courses from the DB and group by year
+        $coursesByYear = Course::orderBy('year')->get()->groupBy('year');
+
+        return view('lecturers.home', compact('lecturers', 'coursesByYear'));
     }
 }

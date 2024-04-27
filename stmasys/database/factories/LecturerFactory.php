@@ -19,6 +19,7 @@ class LecturerFactory extends Factory
         return [
             'lecturer_name' => $this->faker->name,
             'course_taught' => $this->faker->sentence(),
+            'year' => $this->faker->randomElement([1,2,3,4])
         ];
     }
 }

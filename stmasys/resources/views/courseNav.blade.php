@@ -14,7 +14,7 @@
         <div class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
             <div class="py-1" role="none">
                 <!-- Iterate over years and courses -->
-                @foreach ($coursesByYear as $year => $courses)
+                @foreach ($coursesByYear as $year)
                     <div role="none">
                         <p class="block px-4 py-2 text-sm font-semibold text-gray-700">{{ $year }}</p>
                         <!-- Dropdown items for each year -->

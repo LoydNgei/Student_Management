@@ -11,6 +11,7 @@
                         <p><img src="stmasys/public/images/Ecosa.jpg" alt="">{{ $lecturer->image }}</p>
                         <p><strong>Lecturer Name:</strong> {{ $lecturer->lecturer_name }}</p>
                         <p><strong>Course Taught:</strong> {{ $lecturer->course_taught }}</p>
+                        <p><strong>Year:</strong> {{ $lecturer->year }}</p>
                         <a href="{{ route('inquiry') }}">Submit Query</a>
                     </div>
                 @endforeach

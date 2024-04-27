@@ -16,6 +16,7 @@ return new class extends Migration
                 $table->id();
                 $table->string('lecturer_name');
                 $table->string('course_taught');
+                $table->unsignedTinyInteger('year')->nullable();
                 $table->timestamps();
             });
         }

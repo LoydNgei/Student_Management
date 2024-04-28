@@ -15,8 +15,10 @@ class LecturerController extends Controller
         // Fetch courses from the DB and group by year
         $coursesByYear = Lecturer::orderBy('year')->get()->groupBy('year');
 
-        // $course = Lecturer::
+        // $course = Lecturer::get();
 
-        return view('lecturers.home', compact('lecturers', 'coursesByYear'));
+        $years = [1, 2, 3, 4];
+
+        return view('lecturers.home', compact('lecturers', 'years', 'coursesByYear'));
     }
 }

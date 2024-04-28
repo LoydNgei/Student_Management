@@ -13,5 +13,6 @@ class Lecturer extends Model
         'lecturer_name',
         'course_taught',
         'year',
+        'course_images'
     ];
 }

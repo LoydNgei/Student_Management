@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Lecturer;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,10 +15,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $imageFiles = File::files(public_path('images/course_images'));
+
+
         // User::factory(10)->create();
 
-        Lecturer::factory(30)->create();
-        // Lecturer::query()->delete();
+        Lecturer::factory()->create()->each(function ($lecturer) use ($imageFiles) {
+            $randomImage = $imageFiles[array_rand($imageFiles)];
+
+            $filename = pathinfo($randomImage, PATHINFO_FILENAME) . '.' . pathinfo($randomImage, PATHINFO_EXTENSION);
+
+            $lecturer->update(['course_images' => $filename]);
+        });
 
     }
 }
+
+
+// Lecturer::query()->delete();

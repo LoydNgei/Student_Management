@@ -12,10 +12,10 @@ class LecturerController extends Controller
         // Fetch lecturers
         $lecturers = Lecturer::paginate(6);
 
+        $course = Lecturer::get('course_taught');
+
         // Fetch courses from the DB and group by year
         $coursesByYear = Lecturer::orderBy('year')->get()->groupBy('year');
-
-        // $course = Lecturer::get();
 
         $years = [1, 2, 3, 4];
 

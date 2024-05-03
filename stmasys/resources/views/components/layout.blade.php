@@ -8,6 +8,8 @@
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+        <link href="{{ asset('css/homelayout.css') }}" rel="stylesheet">
+
         
         @vite('resources/css/app.css')
 

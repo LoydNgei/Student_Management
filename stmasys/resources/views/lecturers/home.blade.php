@@ -1,30 +1,33 @@
 <x-layout>
     <x-navbar></x-navbar>
 
-    <!-- Grid layout -->
     <div class="grid grid-cols-3 gap-4 pt-32">
         <!-- Lecturers section (3/4 of the width) -->
-        <div class="col-span-2">
+        <div class="col-span-3">
             <div class="grid grid-cols-3 gap-4">
                 @foreach ($lecturers as $lecturer)
-                <div class="border p-4 mb-4" style="background-image: url('{{ asset('images/course_images/' . $lecturer->course_images) }}');">
-                    <p><strong>Lecturer Name:</strong> {{ $lecturer->lecturer_name }}</p>
-                    <p><strong>Course Taught:</strong> {{ $lecturer->course_taught }}</p>
-                    <a href="{{ route('inquiry') }}">Submit Query</a>
+                <div class="lecture-item relative h-0 pb-3/4" style="background-image: url('{{ asset('images/course_images/' . $lecturer->course_images) }}');">
+                    <div class="absolute bottom-0 left-0 right-0 bg-black p-2">
+                        <p><strong>Lecturer Name:</strong> {{ $lecturer->lecturer_name }}</p>
+                        <p><strong>Course Taught:</strong> {{ $lecturer->course_taught }}</p>
+                        <a href="{{ route('inquiry') }}">Submit Query</a>
+                    </div>
                 </div>
                 @endforeach
-            
             </div>
+    
+            {{-- Pagination --}}
 
-            {{ $lecturers->links() }}
-
+            <div class="m-4">{{ $lecturers->links() }}</div>
+    
         </div>
-
+    
         <!-- Dropdown menu (1/4 of the width) -->
-        <div class="col-span-1">
+        {{-- <div class="col-span-1">
             @include('courseNav')
         </div>
-    </div>
+    </div> --}}
+    
 </x-layout>
 
 <x-footer></x-footer>

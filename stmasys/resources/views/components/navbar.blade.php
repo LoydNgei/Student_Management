@@ -7,7 +7,7 @@
 
     <div class="flex items-center ml-auto px-16 space-x-20">
         <input placeholder="Search" class="rounded p-2">
-        <a href="/" class="text-white">
+        <a href="{{route('logout')}}" class="text-white">
             <span>Logout</span>
         </a>
     </div>

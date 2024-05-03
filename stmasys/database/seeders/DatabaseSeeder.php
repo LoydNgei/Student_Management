@@ -17,10 +17,7 @@ class DatabaseSeeder extends Seeder
     {
         $imageFiles = File::files(public_path('images/course_images'));
 
-
-        // User::factory(10)->create();
-
-        Lecturer::factory()->create()->each(function ($lecturer) use ($imageFiles) {
+        Lecturer::factory(30)->create()->each(function ($lecturer) use ($imageFiles) {
             $randomImage = $imageFiles[array_rand($imageFiles)];
 
             $filename = pathinfo($randomImage, PATHINFO_FILENAME) . '.' . pathinfo($randomImage, PATHINFO_EXTENSION);
@@ -33,3 +30,7 @@ class DatabaseSeeder extends Seeder
 
 
 // Lecturer::query()->delete();
+
+// User::factory(10)->create();
+
+// User::query()->delete();

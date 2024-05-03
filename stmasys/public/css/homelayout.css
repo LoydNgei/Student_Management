@@ -1,0 +1,27 @@
+/* Adjust the layout of lecture item */
+.lecture-item {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 300px; /* Adjust this value as needed */
+}
+
+/* Adjust the position of text */
+.lecture-item .border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust the opacity as needed */
+}
+
+/* Style the links */
+.lecture-item .border a {
+    color: #333;
+    text-decoration: none;
+}
+
+.lecture-item .border a:hover {
+    text-decoration: underline;
+}

@@ -27,10 +27,10 @@ class UserController extends Controller
             'password' => 'required'
         ]);
 
-        if(auth()->attempt($formFields)) {
+        if(Auth::attempt($formFields)) {
             return redirect('/home');
         }
-        return back('/login')->withErrors('Invalid credentials');
+        return redirect('/login')->withErrors('Invalid credentials');
     }
 
 
@@ -38,6 +38,7 @@ class UserController extends Controller
     public function registrationPost(Request $request) {
         $formFields = $request->validate([
             'registration_number' => 'required',
+            'name' => 'required',
             'password' => 'required',
             'confirm_password' => 'required'
         ]);
@@ -45,8 +46,9 @@ class UserController extends Controller
         // Create a new User instance
         $user = new User();
         $user->registration_number = $formFields['registration_number'];
+        $user->name = $formFields['name'];
         $user->password = Hash::make($formFields['password']);
-        $user->confirm_password = $formFields['confirm_password'];
+        $user->confirm_password = Hash::make($formFields['confirm_password']);
         $user->save();
 
         if (!$user) {

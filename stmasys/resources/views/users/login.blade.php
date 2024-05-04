@@ -15,9 +15,9 @@
             </div>
 
             <div class="flex items-center justify-between">
-                <a href="{{route('login')}}" class="bg-blue-500 text-white font-bold py-2 px-4 hover:bg-blue-700 rounded focus:outline-none focus:shadow-outline" type="submit">
+                <button class="bg-blue-500 text-white font-bold py-2 px-4 hover:bg-blue-700 rounded focus:outline-none focus:shadow-outline" type="submit">
                     Log in
-                </a>
+                </button>
             </div>
             <div class="mt-4">
                 <p>Don't have an account<a href="/register"> Create one</a></p>

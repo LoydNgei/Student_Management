@@ -25,6 +25,12 @@
                 </label>
                 <input class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="registration_number" type="text" placeholder="Registration Number" name="registration_number">
 
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                    Name
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Student Name" name="name">
+
+
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="password1">
                     Password
                 </label>
@@ -37,9 +43,9 @@
             </div>
 
             <div class="flex items-center justify-between">
-                <a href="{{route('register')}}" class="bg-blue-500 text-white font-bold py-2 px-4 hover:bg-blue-700 rounded focus:outline-none focus:shadow-outline" type="submit">
+                <button class="bg-blue-500 text-white font-bold py-2 px-4 hover:bg-blue-700 rounded focus:outline-none focus:shadow-outline" type="submit">
                     Register
-                </a>
+                </button>
             </div>
 
         </form>

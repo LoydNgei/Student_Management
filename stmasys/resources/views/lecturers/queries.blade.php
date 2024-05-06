@@ -24,7 +24,7 @@
                 </label>
                 <textarea placeholder="Message" class="shadow appearance-none border rounded w-full py-2 px-3"></textarea>
 
-                <button class="bg-blue-500 rounded p-2 hover:bg-blue-700">Submit</button>
+                <button class="bg-blue-500 rounded p-2 hover:bg-blue-700" type="submit">Submit</button>
             </div>
         </form>
     </div>

@@ -29,29 +29,24 @@ use App\Http\Controllers\LecturerController;
 // destroy - Delete listing
 
 
+
+Route::controller(UserController::class)->group(function () {
+    Route::get('/login', 'login')->name('login');
+    Route::post('/login', 'loginpost')->name('login.post');
+    Route::get('/register', 'registration')->name('register');
+    Route::post('/register', 'registrationpost')->name('register.post');
+    Route::get('/logout', 'logout')->name('logout');
+});
+
+
 Route::get('/', function () { return view('welcome');})->name('welcome');
 
-// Login Form
-Route::get('/login', [UserController::class, 'login'])->name('login');
-
-// Post login
-Route::post('/login', [UserController::class, 'loginpost'])->name('login.post');
-
-// Show Register form
-Route::get('/register', [UserController::class, 'registration'])->name('register');
-
-// Post registration
-Route::post('/register', [UserController::class, 'registrationpost'])->name('register.post');
-
-// Logout
-Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 // Home
 Route::get('/home', [LecturerController::class, 'index'])->name('home');
 
 
 // Missing Mark Form
-
 Route::get('/inquiry', [MarksController::class, 'create'])->name('inquiry');
 
 // Submit the Marks Form
@@ -61,5 +56,5 @@ Route::post('/sendquery', [MarksController::class, 'send']);
 
 // Admin authentication routes
 
-Route::post('/adminLogin', [UserController::class, 'adminForm'])->name('admin login');
+// Route::post('/adminLogin', [UserController::class, 'adminForm'])->name('admin login');
 

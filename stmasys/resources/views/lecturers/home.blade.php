@@ -7,7 +7,7 @@
             <div class="grid grid-cols-3 gap-4">
                 @foreach ($lecturers as $lecturer)
                 <div class="lecture-item relative h-0 pb-3/4" style="background-image: url('{{ asset('images/course_images/' . $lecturer->course_images) }}');">
-                    <div class="absolute bottom-0 left-0 right-0 bg-black p-2">
+                    <div class="absolute bottom-0 left-0 right-0 bg-black p-2 text-white">
                         <p><strong>Lecturer Name:</strong> {{ $lecturer->lecturer_name }}</p>
                         <p><strong>Course Taught:</strong> {{ $lecturer->course_taught }}</p>
                         <a href="{{ route('inquiry') }}">Submit Query</a>

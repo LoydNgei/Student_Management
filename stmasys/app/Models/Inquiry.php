@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class missingMarks extends Model
+class Inquiry extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'name',
-        'Reg No',
-        'Unit Name and Course Code',
-        'description'
+        'email',
+        'registration_number',
+        'message'
     ];
     
 }

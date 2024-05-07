@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\MarksController;
+use App\Http\Controllers\InquiryController;
 use App\Http\Controllers\LecturerController;
 
 /*
@@ -29,29 +29,31 @@ use App\Http\Controllers\LecturerController;
 // destroy - Delete listing
 
 
+// Route::get('/', function () { return view('login'); })->name('login');
+
+
+// UserController
 
 Route::controller(UserController::class)->group(function () {
-    Route::get('/login', 'login')->name('login');
-    Route::post('/login', 'loginpost')->name('login.post');
+    Route::get('/', 'login')->name('login');
+    Route::post('/', 'loginpost')->name('login.post');
     Route::get('/register', 'registration')->name('register');
     Route::post('/register', 'registrationpost')->name('register.post');
     Route::get('/logout', 'logout')->name('logout');
 });
 
+// LecturerController
 
-Route::get('/', function () { return view('welcome');})->name('welcome');
+Route::controller(LecturerController::class)->group(function () {
+    Route::get('/home', 'index')->name('home');
+});
 
+// InquiryController
 
-// Home
-Route::get('/home', [LecturerController::class, 'index'])->name('home');
-
-
-// Missing Mark Form
-Route::get('/inquiry', [MarksController::class, 'create'])->name('inquiry');
-
-// Submit the Marks Form
-
-Route::post('/sendquery', [MarksController::class, 'send']);
+Route::controller(InquiryController::class)->group(function () {
+    Route::get('/inquiry', 'inquiry')->name('inquiry');
+    Route::post('/inquirypost','inquirypost')->name('inquiry.post');
+});
 
 
 // Admin authentication routes

@@ -37,13 +37,14 @@ class UserController extends Controller
     // Register User
     public function registrationPost(Request $request) {
         $formFields = $request->validate([
-            'registration_number' => 'required',
+            'registration_number' => 'required|unique:users',
             'name' => 'required',
             'password' => 'required',
-            'confirm_password' => 'required'
+            'confirm_password' => 'required|same:password'
         ]);
 
         // Create a new User instance
+
         $user = new User();
         $user->registration_number = $formFields['registration_number'];
         $user->name = $formFields['name'];
@@ -64,6 +65,6 @@ class UserController extends Controller
     public function logout() {
         session:flush();
         Auth::logout();
-        return redirect('/login');
+        return redirect('/');
     }
 }

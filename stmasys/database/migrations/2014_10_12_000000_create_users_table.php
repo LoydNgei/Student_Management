@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('registration_number')->unique();
             $table->string('name');
-            // $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('confirm_password');
             $table->rememberToken();

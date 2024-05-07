@@ -1,6 +1,6 @@
 <x-layout>
     <div class="min-h-screen flex items-center justify-center">
-        <div class="mt-5">
+        {{-- <div class="mt-5">
             @if($errors->any())
                 <div class="div">
                     @foreach($errors->all() as $error)
@@ -15,7 +15,7 @@
             @if(session()->has('success'))
                 <div>{{session('success')}}</div>               
             @endif
-        </div>
+        </div> --}}
 
         <form method="POST" action="{{ route('register.post') }}" class="bg-blue-300 shadow-md rounded px-8 pt-6 pb-8 mb-4">
             @csrf

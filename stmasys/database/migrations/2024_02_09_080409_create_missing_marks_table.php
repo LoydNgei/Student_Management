@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('missing_marks', function (Blueprint $table) {
+        Schema::create('inquiries', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('Reg No');
-            $table->string('Unit Name and Course Code');
-            $table->string('description');     
+            $table->string('Email');
+            $table->string('Registration_number');
+            $table->string('message');
             $table->timestamps();
         });
     }

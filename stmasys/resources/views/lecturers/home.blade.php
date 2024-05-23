@@ -19,7 +19,6 @@
             {{-- Pagination --}}
 
             <div class="m-4">{{ $lecturers->links() }}</div>
-    
         </div>
     
         <!-- Dropdown menu (1/4 of the width) -->
